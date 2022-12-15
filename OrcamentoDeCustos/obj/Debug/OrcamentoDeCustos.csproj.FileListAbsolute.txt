@@ -1,0 +1,10 @@
+C:\Users\estagiario4\Desktop\C#\OrcamentoDeCustos\OrcamentoDeCustos\bin\Debug\OrcamentoDeCustos.exe.config
+C:\Users\estagiario4\Desktop\C#\OrcamentoDeCustos\OrcamentoDeCustos\bin\Debug\OrcamentoDeCustos.exe
+C:\Users\estagiario4\Desktop\C#\OrcamentoDeCustos\OrcamentoDeCustos\bin\Debug\OrcamentoDeCustos.pdb
+C:\Users\estagiario4\Desktop\C#\OrcamentoDeCustos\OrcamentoDeCustos\obj\Debug\OrcamentoDeCustos.csproj.AssemblyReference.cache
+C:\Users\estagiario4\Desktop\C#\OrcamentoDeCustos\OrcamentoDeCustos\obj\Debug\OrcamentoDeCustos.Properties.Resources.resources
+C:\Users\estagiario4\Desktop\C#\OrcamentoDeCustos\OrcamentoDeCustos\obj\Debug\OrcamentoDeCustos.csproj.GenerateResource.cache
+C:\Users\estagiario4\Desktop\C#\OrcamentoDeCustos\OrcamentoDeCustos\obj\Debug\OrcamentoDeCustos.csproj.CoreCompileInputs.cache
+C:\Users\estagiario4\Desktop\C#\OrcamentoDeCustos\OrcamentoDeCustos\obj\Debug\OrcamentoDeCustos.exe
+C:\Users\estagiario4\Desktop\C#\OrcamentoDeCustos\OrcamentoDeCustos\obj\Debug\OrcamentoDeCustos.pdb
+C:\Users\estagiario4\Desktop\C#\OrcamentoDeCustos\OrcamentoDeCustos\obj\Debug\OrcamentoDeCustos.orcamento.resources
