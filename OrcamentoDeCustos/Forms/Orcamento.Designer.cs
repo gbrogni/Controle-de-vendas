@@ -1,4 +1,4 @@
-﻿
+
 namespace OrcamentoDeCustos
 {
     partial class Orcamento
@@ -29,7 +29,7 @@ namespace OrcamentoDeCustos
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Calcular = new System.Windows.Forms.Button();
             this.Consultar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,9 +43,6 @@ namespace OrcamentoDeCustos
             this.txtCustoMes = new System.Windows.Forms.TextBox();
             this.txtTotalPeriodo = new System.Windows.Forms.TextBox();
             this.dgvOrcamento = new System.Windows.Forms.DataGridView();
-            this.checkVenda = new System.Windows.Forms.CheckBox();
-            this.checkCusto = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.CodProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.janeiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +58,11 @@ namespace OrcamentoDeCustos
             this.novembro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dezembro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkVenda = new System.Windows.Forms.CheckBox();
+            this.checkCusto = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboAno = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrcamento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +85,7 @@ namespace OrcamentoDeCustos
             this.Consultar.TabIndex = 1;
             this.Consultar.Text = "Consultar";
             this.Consultar.UseVisualStyleBackColor = true;
+            this.Consultar.Click += new System.EventHandler(this.Consultar_Click);
             // 
             // label1
             // 
@@ -186,14 +189,14 @@ namespace OrcamentoDeCustos
             this.dgvOrcamento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvOrcamento.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvOrcamento.BackgroundColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrcamento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrcamento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvOrcamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrcamento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodProduto,
@@ -220,35 +223,6 @@ namespace OrcamentoDeCustos
             this.dgvOrcamento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrcamento.Size = new System.Drawing.Size(1397, 627);
             this.dgvOrcamento.TabIndex = 71;
-            // 
-            // checkVenda
-            // 
-            this.checkVenda.AutoSize = true;
-            this.checkVenda.Location = new System.Drawing.Point(759, 31);
-            this.checkVenda.Name = "checkVenda";
-            this.checkVenda.Size = new System.Drawing.Size(128, 17);
-            this.checkVenda.TabIndex = 72;
-            this.checkVenda.Text = "Ocultar coluna venda";
-            this.checkVenda.UseVisualStyleBackColor = true;
-            // 
-            // checkCusto
-            // 
-            this.checkCusto.AutoSize = true;
-            this.checkCusto.Location = new System.Drawing.Point(908, 31);
-            this.checkCusto.Name = "checkCusto";
-            this.checkCusto.Size = new System.Drawing.Size(124, 17);
-            this.checkCusto.TabIndex = 73;
-            this.checkCusto.Text = "Ocultar coluna custo";
-            this.checkCusto.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(89, 35);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 13);
-            this.label4.TabIndex = 74;
-            this.label4.Text = "Orçamento empresa";
             // 
             // CodProduto
             // 
@@ -356,11 +330,63 @@ namespace OrcamentoDeCustos
             this.total.ReadOnly = true;
             this.total.Width = 56;
             // 
+            // checkVenda
+            // 
+            this.checkVenda.AutoSize = true;
+            this.checkVenda.Location = new System.Drawing.Point(759, 31);
+            this.checkVenda.Name = "checkVenda";
+            this.checkVenda.Size = new System.Drawing.Size(128, 17);
+            this.checkVenda.TabIndex = 72;
+            this.checkVenda.Text = "Ocultar coluna venda";
+            this.checkVenda.UseVisualStyleBackColor = true;
+            // 
+            // checkCusto
+            // 
+            this.checkCusto.AutoSize = true;
+            this.checkCusto.Location = new System.Drawing.Point(908, 31);
+            this.checkCusto.Name = "checkCusto";
+            this.checkCusto.Size = new System.Drawing.Size(124, 17);
+            this.checkCusto.TabIndex = 73;
+            this.checkCusto.Text = "Ocultar coluna custo";
+            this.checkCusto.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(370, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 13);
+            this.label4.TabIndex = 74;
+            this.label4.Text = "Orçamento empresa";
+            // 
+            // comboAno
+            // 
+            this.comboAno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboAno.FormattingEnabled = true;
+            this.comboAno.Items.AddRange(new object[] {
+            "2020",
+            "2019"});
+            this.comboAno.Location = new System.Drawing.Point(55, 32);
+            this.comboAno.Name = "comboAno";
+            this.comboAno.Size = new System.Drawing.Size(79, 21);
+            this.comboAno.TabIndex = 75;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 32);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.TabIndex = 76;
+            this.label6.Text = "Ano";
+            // 
             // Orcamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1424, 826);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.comboAno);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.checkCusto);
             this.Controls.Add(this.checkVenda);
@@ -379,7 +405,6 @@ namespace OrcamentoDeCustos
             this.Controls.Add(this.Calcular);
             this.Name = "Orcamento";
             this.Text = "Orçamento";
-            this.Load += new System.EventHandler(this.Orcamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrcamento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -419,6 +444,8 @@ namespace OrcamentoDeCustos
     private System.Windows.Forms.DataGridViewTextBoxColumn novembro;
     private System.Windows.Forms.DataGridViewTextBoxColumn Dezembro;
     private System.Windows.Forms.DataGridViewTextBoxColumn total;
+    private System.Windows.Forms.ComboBox comboAno;
+    private System.Windows.Forms.Label label6;
   }
 }
 

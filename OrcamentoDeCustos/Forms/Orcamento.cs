@@ -1,5 +1,6 @@
 using OrcamentoDeCustos.Connection;
 using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using System.Windows.Forms;
@@ -11,7 +12,7 @@ namespace OrcamentoDeCustos
         public Orcamento()
         {
             InitializeComponent();
-            ExibirDados();
+            //ExibirDados();
         }
 
     private void AdicionaLinha(SqlDataReader dr)
@@ -66,18 +67,12 @@ namespace OrcamentoDeCustos
           cn.Open();
 
           StringBuilder sql = new StringBuilder();
-          sql.AppendLine($@"select * from (select top 1000 codProduto, month(data) as mes, nomeProduto,
+          sql.AppendLine($@"select top 100 * from (select  codProduto, month(data) as mes, nomeProduto,
                                       sum(valorVenda) as Total 
                                       from MvtVendasEstruturaConsultaMes
-                                      where valorVenda != 0 
-                                      group by grouping sets (
-                                      (codProduto ,month(data), nomeProduto),
-                                      (month(data))))
-                                      as tab_resumo
-                                      Pivot(
-                                      Sum(Total)
-                                      for mes in ([1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12])
-                                      ) as tabPivot ");
+                                      where year(data) ='" + comboAno.Text + "' group by grouping sets ((codProduto ,month(data), nomeProduto),(month(data))))" +
+                                      "as tab_resumo Pivot(Sum(Total)" +
+                                      "for mes in ([1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12]) ) as tabPivot");
 
           SqlCommand sqlCommand = cn.CreateCommand();
           sqlCommand.CommandText = sql.ToString();
@@ -99,9 +94,9 @@ namespace OrcamentoDeCustos
       }
     }
 
-    private void Orcamento_Load(object sender, EventArgs e)
+    private void Consultar_Click(object sender, EventArgs e)
     {
-      
+      ExibirDados();
     }
   }
 }
