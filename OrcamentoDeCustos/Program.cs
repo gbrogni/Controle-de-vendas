@@ -16,7 +16,7 @@ namespace OrcamentoDeCustos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new orcamento());
+            Application.Run(new Orcamento());
         }
     }
 }

@@ -8,7 +8,7 @@ namespace OrcamentoDeCustos.Connection
 {
   class Conn
   {
-    private static string server = @"DESKTOP-MVV8N06\SQLEXPRESS";
+    private static string server = @"DESKTOP-N9LAKIF\SQLEXPRESS";
     private static string dataBase = "Movtech";
     private static string user = "sa";
     private static string password = "123";
