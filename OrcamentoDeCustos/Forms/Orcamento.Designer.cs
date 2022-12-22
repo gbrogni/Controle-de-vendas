@@ -29,7 +29,7 @@ namespace OrcamentoDeCustos
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Calcular = new System.Windows.Forms.Button();
             this.Consultar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,26 +43,41 @@ namespace OrcamentoDeCustos
             this.txtCustoMes = new System.Windows.Forms.TextBox();
             this.txtTotalPeriodo = new System.Windows.Forms.TextBox();
             this.dgvOrcamento = new System.Windows.Forms.DataGridView();
-            this.CodProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.janeiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fevereiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Abril = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.junho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.julho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.agosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.setembro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.outubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.novembro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dezembro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkVenda = new System.Windows.Forms.CheckBox();
             this.checkCusto = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.comboAno = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.checkTotalVenda = new System.Windows.Forms.CheckBox();
+            this.checkTotalCusto = new System.Windows.Forms.CheckBox();
+            this.CodProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.custoUni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.janeiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.janCusto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fevereiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fevCusto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marCusto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Abril = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abrilCusto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maioCusto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.junho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.junCusto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.julho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.julCusto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.agosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.agoCusto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.setembro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.setCusto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outCusto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.novembro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.novCusto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dezembro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dezCusto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalCusto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrcamento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +90,7 @@ namespace OrcamentoDeCustos
             this.Calcular.TabIndex = 0;
             this.Calcular.Text = "Calcular";
             this.Calcular.UseVisualStyleBackColor = true;
+            this.Calcular.Click += new System.EventHandler(this.Calcular_Click);
             // 
             // Consultar
             // 
@@ -189,31 +205,45 @@ namespace OrcamentoDeCustos
             this.dgvOrcamento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvOrcamento.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvOrcamento.BackgroundColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrcamento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrcamento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvOrcamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrcamento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodProduto,
             this.nomeProduto,
+            this.custoUni,
             this.janeiro,
+            this.janCusto,
             this.fevereiro,
+            this.fevCusto,
             this.marco,
+            this.marCusto,
             this.Abril,
+            this.abrilCusto,
             this.maio,
+            this.maioCusto,
             this.junho,
+            this.junCusto,
             this.julho,
+            this.julCusto,
             this.agosto,
+            this.agoCusto,
             this.setembro,
+            this.setCusto,
             this.outubro,
+            this.outCusto,
             this.novembro,
+            this.novCusto,
             this.Dezembro,
-            this.total});
+            this.dezCusto,
+            this.total,
+            this.totalCusto});
             this.dgvOrcamento.EnableHeadersVisualStyles = false;
             this.dgvOrcamento.Location = new System.Drawing.Point(15, 96);
             this.dgvOrcamento.MultiSelect = false;
@@ -224,112 +254,6 @@ namespace OrcamentoDeCustos
             this.dgvOrcamento.Size = new System.Drawing.Size(1397, 627);
             this.dgvOrcamento.TabIndex = 71;
             // 
-            // CodProduto
-            // 
-            this.CodProduto.Frozen = true;
-            this.CodProduto.HeaderText = "Cod.Produto";
-            this.CodProduto.Name = "CodProduto";
-            this.CodProduto.ReadOnly = true;
-            this.CodProduto.Width = 91;
-            // 
-            // nomeProduto
-            // 
-            this.nomeProduto.HeaderText = "Nome";
-            this.nomeProduto.Name = "nomeProduto";
-            this.nomeProduto.ReadOnly = true;
-            this.nomeProduto.Width = 60;
-            // 
-            // janeiro
-            // 
-            this.janeiro.HeaderText = "Janeiro";
-            this.janeiro.Name = "janeiro";
-            this.janeiro.ReadOnly = true;
-            this.janeiro.Width = 66;
-            // 
-            // fevereiro
-            // 
-            this.fevereiro.HeaderText = "Fevereiro";
-            this.fevereiro.Name = "fevereiro";
-            this.fevereiro.ReadOnly = true;
-            this.fevereiro.Width = 76;
-            // 
-            // marco
-            // 
-            this.marco.HeaderText = "Março";
-            this.marco.Name = "marco";
-            this.marco.ReadOnly = true;
-            this.marco.Width = 62;
-            // 
-            // Abril
-            // 
-            this.Abril.HeaderText = "Abril";
-            this.Abril.Name = "Abril";
-            this.Abril.ReadOnly = true;
-            this.Abril.Width = 52;
-            // 
-            // maio
-            // 
-            this.maio.HeaderText = "Maio";
-            this.maio.Name = "maio";
-            this.maio.ReadOnly = true;
-            this.maio.Width = 55;
-            // 
-            // junho
-            // 
-            this.junho.HeaderText = "Junho";
-            this.junho.Name = "junho";
-            this.junho.ReadOnly = true;
-            this.junho.Width = 61;
-            // 
-            // julho
-            // 
-            this.julho.HeaderText = "Julho";
-            this.julho.Name = "julho";
-            this.julho.ReadOnly = true;
-            this.julho.Width = 57;
-            // 
-            // agosto
-            // 
-            this.agosto.HeaderText = "Agosto";
-            this.agosto.Name = "agosto";
-            this.agosto.ReadOnly = true;
-            this.agosto.Width = 65;
-            // 
-            // setembro
-            // 
-            this.setembro.HeaderText = "Setembro";
-            this.setembro.Name = "setembro";
-            this.setembro.ReadOnly = true;
-            this.setembro.Width = 77;
-            // 
-            // outubro
-            // 
-            this.outubro.HeaderText = "Outubro";
-            this.outubro.Name = "outubro";
-            this.outubro.ReadOnly = true;
-            this.outubro.Width = 70;
-            // 
-            // novembro
-            // 
-            this.novembro.HeaderText = "Novembro";
-            this.novembro.Name = "novembro";
-            this.novembro.ReadOnly = true;
-            this.novembro.Width = 81;
-            // 
-            // Dezembro
-            // 
-            this.Dezembro.HeaderText = "Dezembro";
-            this.Dezembro.Name = "Dezembro";
-            this.Dezembro.ReadOnly = true;
-            this.Dezembro.Width = 80;
-            // 
-            // total
-            // 
-            this.total.HeaderText = "Total";
-            this.total.Name = "total";
-            this.total.ReadOnly = true;
-            this.total.Width = 56;
-            // 
             // checkVenda
             // 
             this.checkVenda.AutoSize = true;
@@ -339,6 +263,7 @@ namespace OrcamentoDeCustos
             this.checkVenda.TabIndex = 72;
             this.checkVenda.Text = "Ocultar coluna venda";
             this.checkVenda.UseVisualStyleBackColor = true;
+            this.checkVenda.CheckedChanged += new System.EventHandler(this.checkVenda_CheckedChanged);
             // 
             // checkCusto
             // 
@@ -349,15 +274,7 @@ namespace OrcamentoDeCustos
             this.checkCusto.TabIndex = 73;
             this.checkCusto.Text = "Ocultar coluna custo";
             this.checkCusto.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(370, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 13);
-            this.label4.TabIndex = 74;
-            this.label4.Text = "Orçamento empresa";
+            this.checkCusto.CheckedChanged += new System.EventHandler(this.checkCusto_CheckedChanged);
             // 
             // comboAno
             // 
@@ -380,14 +297,241 @@ namespace OrcamentoDeCustos
             this.label6.TabIndex = 76;
             this.label6.Text = "Ano";
             // 
+            // checkTotalVenda
+            // 
+            this.checkTotalVenda.AutoSize = true;
+            this.checkTotalVenda.Location = new System.Drawing.Point(759, 54);
+            this.checkTotalVenda.Name = "checkTotalVenda";
+            this.checkTotalVenda.Size = new System.Drawing.Size(116, 17);
+            this.checkTotalVenda.TabIndex = 77;
+            this.checkTotalVenda.Text = "Ocultar total venda";
+            this.checkTotalVenda.UseVisualStyleBackColor = true;
+            this.checkTotalVenda.CheckedChanged += new System.EventHandler(this.checkTotalVenda_CheckedChanged);
+            // 
+            // checkTotalCusto
+            // 
+            this.checkTotalCusto.AutoSize = true;
+            this.checkTotalCusto.Location = new System.Drawing.Point(908, 54);
+            this.checkTotalCusto.Name = "checkTotalCusto";
+            this.checkTotalCusto.Size = new System.Drawing.Size(112, 17);
+            this.checkTotalCusto.TabIndex = 78;
+            this.checkTotalCusto.Text = "Ocultar total custo";
+            this.checkTotalCusto.UseVisualStyleBackColor = true;
+            this.checkTotalCusto.CheckedChanged += new System.EventHandler(this.checkTotalCusto_CheckedChanged);
+            // 
+            // CodProduto
+            // 
+            this.CodProduto.Frozen = true;
+            this.CodProduto.HeaderText = "Cod.Produto";
+            this.CodProduto.Name = "CodProduto";
+            this.CodProduto.ReadOnly = true;
+            this.CodProduto.Width = 91;
+            // 
+            // nomeProduto
+            // 
+            this.nomeProduto.HeaderText = "Nome";
+            this.nomeProduto.Name = "nomeProduto";
+            this.nomeProduto.ReadOnly = true;
+            this.nomeProduto.Width = 60;
+            // 
+            // custoUni
+            // 
+            this.custoUni.HeaderText = "Custo unit.";
+            this.custoUni.Name = "custoUni";
+            this.custoUni.ReadOnly = true;
+            this.custoUni.Width = 82;
+            // 
+            // janeiro
+            // 
+            this.janeiro.HeaderText = "Janeiro";
+            this.janeiro.Name = "janeiro";
+            this.janeiro.ReadOnly = true;
+            this.janeiro.Width = 66;
+            // 
+            // janCusto
+            // 
+            this.janCusto.HeaderText = "Jan. custo";
+            this.janCusto.Name = "janCusto";
+            this.janCusto.ReadOnly = true;
+            this.janCusto.Width = 81;
+            // 
+            // fevereiro
+            // 
+            this.fevereiro.HeaderText = "Fevereiro";
+            this.fevereiro.Name = "fevereiro";
+            this.fevereiro.ReadOnly = true;
+            this.fevereiro.Width = 76;
+            // 
+            // fevCusto
+            // 
+            this.fevCusto.HeaderText = "Fev. custo";
+            this.fevCusto.Name = "fevCusto";
+            this.fevCusto.ReadOnly = true;
+            this.fevCusto.Width = 82;
+            // 
+            // marco
+            // 
+            this.marco.HeaderText = "Março";
+            this.marco.Name = "marco";
+            this.marco.ReadOnly = true;
+            this.marco.Width = 62;
+            // 
+            // marCusto
+            // 
+            this.marCusto.HeaderText = "Mar. custo";
+            this.marCusto.Name = "marCusto";
+            this.marCusto.ReadOnly = true;
+            this.marCusto.Width = 82;
+            // 
+            // Abril
+            // 
+            this.Abril.HeaderText = "Abril";
+            this.Abril.Name = "Abril";
+            this.Abril.ReadOnly = true;
+            this.Abril.Width = 52;
+            // 
+            // abrilCusto
+            // 
+            this.abrilCusto.HeaderText = "Abril custo";
+            this.abrilCusto.Name = "abrilCusto";
+            this.abrilCusto.ReadOnly = true;
+            this.abrilCusto.Width = 81;
+            // 
+            // maio
+            // 
+            this.maio.HeaderText = "Maio";
+            this.maio.Name = "maio";
+            this.maio.ReadOnly = true;
+            this.maio.Width = 55;
+            // 
+            // maioCusto
+            // 
+            this.maioCusto.HeaderText = "Maio custo";
+            this.maioCusto.Name = "maioCusto";
+            this.maioCusto.ReadOnly = true;
+            this.maioCusto.Width = 84;
+            // 
+            // junho
+            // 
+            this.junho.HeaderText = "Junho";
+            this.junho.Name = "junho";
+            this.junho.ReadOnly = true;
+            this.junho.Width = 61;
+            // 
+            // junCusto
+            // 
+            this.junCusto.HeaderText = "Jun. custo";
+            this.junCusto.Name = "junCusto";
+            this.junCusto.ReadOnly = true;
+            this.junCusto.Width = 81;
+            // 
+            // julho
+            // 
+            this.julho.HeaderText = "Julho";
+            this.julho.Name = "julho";
+            this.julho.ReadOnly = true;
+            this.julho.Width = 57;
+            // 
+            // julCusto
+            // 
+            this.julCusto.HeaderText = "Jul. custo";
+            this.julCusto.Name = "julCusto";
+            this.julCusto.ReadOnly = true;
+            this.julCusto.Width = 77;
+            // 
+            // agosto
+            // 
+            this.agosto.HeaderText = "Agosto";
+            this.agosto.Name = "agosto";
+            this.agosto.ReadOnly = true;
+            this.agosto.Width = 65;
+            // 
+            // agoCusto
+            // 
+            this.agoCusto.HeaderText = "Ago. custo";
+            this.agoCusto.Name = "agoCusto";
+            this.agoCusto.ReadOnly = true;
+            this.agoCusto.Width = 83;
+            // 
+            // setembro
+            // 
+            this.setembro.HeaderText = "Setembro";
+            this.setembro.Name = "setembro";
+            this.setembro.ReadOnly = true;
+            this.setembro.Width = 77;
+            // 
+            // setCusto
+            // 
+            this.setCusto.HeaderText = "Set. custo";
+            this.setCusto.Name = "setCusto";
+            this.setCusto.ReadOnly = true;
+            this.setCusto.Width = 80;
+            // 
+            // outubro
+            // 
+            this.outubro.HeaderText = "Outubro";
+            this.outubro.Name = "outubro";
+            this.outubro.ReadOnly = true;
+            this.outubro.Width = 70;
+            // 
+            // outCusto
+            // 
+            this.outCusto.HeaderText = "Out. custo";
+            this.outCusto.Name = "outCusto";
+            this.outCusto.ReadOnly = true;
+            this.outCusto.Width = 81;
+            // 
+            // novembro
+            // 
+            this.novembro.HeaderText = "Novembro";
+            this.novembro.Name = "novembro";
+            this.novembro.ReadOnly = true;
+            this.novembro.Width = 81;
+            // 
+            // novCusto
+            // 
+            this.novCusto.HeaderText = "Nov. custo";
+            this.novCusto.Name = "novCusto";
+            this.novCusto.ReadOnly = true;
+            this.novCusto.Width = 84;
+            // 
+            // Dezembro
+            // 
+            this.Dezembro.HeaderText = "Dezembro";
+            this.Dezembro.Name = "Dezembro";
+            this.Dezembro.ReadOnly = true;
+            this.Dezembro.Width = 80;
+            // 
+            // dezCusto
+            // 
+            this.dezCusto.HeaderText = "Dez. custo";
+            this.dezCusto.Name = "dezCusto";
+            this.dezCusto.ReadOnly = true;
+            this.dezCusto.Width = 83;
+            // 
+            // total
+            // 
+            this.total.HeaderText = "Total";
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
+            this.total.Width = 56;
+            // 
+            // totalCusto
+            // 
+            this.totalCusto.HeaderText = "Total custo";
+            this.totalCusto.Name = "totalCusto";
+            this.totalCusto.ReadOnly = true;
+            this.totalCusto.Width = 85;
+            // 
             // Orcamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1424, 826);
+            this.Controls.Add(this.checkTotalCusto);
+            this.Controls.Add(this.checkTotalVenda);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboAno);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.checkCusto);
             this.Controls.Add(this.checkVenda);
             this.Controls.Add(this.dgvOrcamento);
@@ -428,24 +572,39 @@ namespace OrcamentoDeCustos
     private System.Windows.Forms.DataGridView dgvOrcamento;
     private System.Windows.Forms.CheckBox checkVenda;
     private System.Windows.Forms.CheckBox checkCusto;
-    private System.Windows.Forms.Label label4;
-    private System.Windows.Forms.DataGridViewTextBoxColumn CodProduto;
-    private System.Windows.Forms.DataGridViewTextBoxColumn nomeProduto;
-    private System.Windows.Forms.DataGridViewTextBoxColumn janeiro;
-    private System.Windows.Forms.DataGridViewTextBoxColumn fevereiro;
-    private System.Windows.Forms.DataGridViewTextBoxColumn marco;
-    private System.Windows.Forms.DataGridViewTextBoxColumn Abril;
-    private System.Windows.Forms.DataGridViewTextBoxColumn maio;
-    private System.Windows.Forms.DataGridViewTextBoxColumn junho;
-    private System.Windows.Forms.DataGridViewTextBoxColumn julho;
-    private System.Windows.Forms.DataGridViewTextBoxColumn agosto;
-    private System.Windows.Forms.DataGridViewTextBoxColumn setembro;
-    private System.Windows.Forms.DataGridViewTextBoxColumn outubro;
-    private System.Windows.Forms.DataGridViewTextBoxColumn novembro;
-    private System.Windows.Forms.DataGridViewTextBoxColumn Dezembro;
-    private System.Windows.Forms.DataGridViewTextBoxColumn total;
     private System.Windows.Forms.ComboBox comboAno;
     private System.Windows.Forms.Label label6;
+    private System.Windows.Forms.CheckBox checkTotalVenda;
+    private System.Windows.Forms.CheckBox checkTotalCusto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn CodProduto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn nomeProduto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn custoUni;
+    private System.Windows.Forms.DataGridViewTextBoxColumn janeiro;
+    private System.Windows.Forms.DataGridViewTextBoxColumn janCusto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn fevereiro;
+    private System.Windows.Forms.DataGridViewTextBoxColumn fevCusto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn marco;
+    private System.Windows.Forms.DataGridViewTextBoxColumn marCusto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn Abril;
+    private System.Windows.Forms.DataGridViewTextBoxColumn abrilCusto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn maio;
+    private System.Windows.Forms.DataGridViewTextBoxColumn maioCusto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn junho;
+    private System.Windows.Forms.DataGridViewTextBoxColumn junCusto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn julho;
+    private System.Windows.Forms.DataGridViewTextBoxColumn julCusto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn agosto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn agoCusto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn setembro;
+    private System.Windows.Forms.DataGridViewTextBoxColumn setCusto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn outubro;
+    private System.Windows.Forms.DataGridViewTextBoxColumn outCusto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn novembro;
+    private System.Windows.Forms.DataGridViewTextBoxColumn novCusto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn Dezembro;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dezCusto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn total;
+    private System.Windows.Forms.DataGridViewTextBoxColumn totalCusto;
   }
 }
 
