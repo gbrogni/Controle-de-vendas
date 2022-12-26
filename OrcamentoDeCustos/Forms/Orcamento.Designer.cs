@@ -30,18 +30,40 @@ namespace OrcamentoDeCustos
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Calcular = new System.Windows.Forms.Button();
             this.Consultar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCustoVenda = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtCountDistinct = new System.Windows.Forms.TextBox();
             this.txtCustoUnit = new System.Windows.Forms.TextBox();
-            this.txtVendaMes = new System.Windows.Forms.TextBox();
-            this.txtCustoMes = new System.Windows.Forms.TextBox();
-            this.txtTotalPeriodo = new System.Windows.Forms.TextBox();
             this.dgvOrcamento = new System.Windows.Forms.DataGridView();
             this.checkVenda = new System.Windows.Forms.CheckBox();
             this.checkCusto = new System.Windows.Forms.CheckBox();
@@ -84,18 +106,18 @@ namespace OrcamentoDeCustos
             // Calcular
             // 
             this.Calcular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Calcular.Location = new System.Drawing.Point(1279, 22);
+            this.Calcular.Location = new System.Drawing.Point(1279, 32);
             this.Calcular.Name = "Calcular";
             this.Calcular.Size = new System.Drawing.Size(133, 26);
             this.Calcular.TabIndex = 0;
-            this.Calcular.Text = "Calcular";
+            this.Calcular.Text = "Calcular custos";
             this.Calcular.UseVisualStyleBackColor = true;
             this.Calcular.Click += new System.EventHandler(this.Calcular_Click);
             // 
             // Consultar
             // 
             this.Consultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Consultar.Location = new System.Drawing.Point(1128, 22);
+            this.Consultar.Location = new System.Drawing.Point(1122, 32);
             this.Consultar.Name = "Consultar";
             this.Consultar.Size = new System.Drawing.Size(133, 26);
             this.Consultar.TabIndex = 1;
@@ -115,38 +137,11 @@ namespace OrcamentoDeCustos
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(506, 760);
+            this.label2.Location = new System.Drawing.Point(361, 760);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.Size = new System.Drawing.Size(88, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Média";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(756, 760);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Total";
-            // 
-            // txtCustoVenda
-            // 
-            this.txtCustoVenda.AutoSize = true;
-            this.txtCustoVenda.Location = new System.Drawing.Point(905, 760);
-            this.txtCustoVenda.Name = "txtCustoVenda";
-            this.txtCustoVenda.Size = new System.Drawing.Size(31, 13);
-            this.txtCustoVenda.TabIndex = 6;
-            this.txtCustoVenda.Text = "Total";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1276, 760);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Total";
+            this.label2.Text = "Média custo unit.";
             // 
             // txtCountDistinct
             // 
@@ -154,6 +149,7 @@ namespace OrcamentoDeCustos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCountDistinct.Location = new System.Drawing.Point(92, 760);
             this.txtCountDistinct.Name = "txtCountDistinct";
+            this.txtCountDistinct.ReadOnly = true;
             this.txtCountDistinct.Size = new System.Drawing.Size(81, 20);
             this.txtCountDistinct.TabIndex = 8;
             // 
@@ -161,37 +157,11 @@ namespace OrcamentoDeCustos
             // 
             this.txtCustoUnit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCustoUnit.Location = new System.Drawing.Point(548, 760);
+            this.txtCustoUnit.Location = new System.Drawing.Point(455, 760);
             this.txtCustoUnit.Name = "txtCustoUnit";
+            this.txtCustoUnit.ReadOnly = true;
             this.txtCustoUnit.Size = new System.Drawing.Size(81, 20);
             this.txtCustoUnit.TabIndex = 9;
-            // 
-            // txtVendaMes
-            // 
-            this.txtVendaMes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtVendaMes.Location = new System.Drawing.Point(793, 760);
-            this.txtVendaMes.Name = "txtVendaMes";
-            this.txtVendaMes.Size = new System.Drawing.Size(81, 20);
-            this.txtVendaMes.TabIndex = 10;
-            // 
-            // txtCustoMes
-            // 
-            this.txtCustoMes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCustoMes.Location = new System.Drawing.Point(942, 760);
-            this.txtCustoMes.Name = "txtCustoMes";
-            this.txtCustoMes.Size = new System.Drawing.Size(81, 20);
-            this.txtCustoMes.TabIndex = 11;
-            // 
-            // txtTotalPeriodo
-            // 
-            this.txtTotalPeriodo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotalPeriodo.Location = new System.Drawing.Point(1313, 760);
-            this.txtTotalPeriodo.Name = "txtTotalPeriodo";
-            this.txtTotalPeriodo.Size = new System.Drawing.Size(81, 20);
-            this.txtTotalPeriodo.TabIndex = 12;
             // 
             // dgvOrcamento
             // 
@@ -257,7 +227,7 @@ namespace OrcamentoDeCustos
             // checkVenda
             // 
             this.checkVenda.AutoSize = true;
-            this.checkVenda.Location = new System.Drawing.Point(759, 31);
+            this.checkVenda.Location = new System.Drawing.Point(746, 28);
             this.checkVenda.Name = "checkVenda";
             this.checkVenda.Size = new System.Drawing.Size(128, 17);
             this.checkVenda.TabIndex = 72;
@@ -268,7 +238,7 @@ namespace OrcamentoDeCustos
             // checkCusto
             // 
             this.checkCusto.AutoSize = true;
-            this.checkCusto.Location = new System.Drawing.Point(908, 31);
+            this.checkCusto.Location = new System.Drawing.Point(925, 28);
             this.checkCusto.Name = "checkCusto";
             this.checkCusto.Size = new System.Drawing.Size(124, 17);
             this.checkCusto.TabIndex = 73;
@@ -283,7 +253,7 @@ namespace OrcamentoDeCustos
             this.comboAno.Items.AddRange(new object[] {
             "2020",
             "2019"});
-            this.comboAno.Location = new System.Drawing.Point(55, 32);
+            this.comboAno.Location = new System.Drawing.Point(59, 37);
             this.comboAno.Name = "comboAno";
             this.comboAno.Size = new System.Drawing.Size(79, 21);
             this.comboAno.TabIndex = 75;
@@ -291,7 +261,7 @@ namespace OrcamentoDeCustos
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 32);
+            this.label6.Location = new System.Drawing.Point(12, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 13);
             this.label6.TabIndex = 76;
@@ -300,7 +270,7 @@ namespace OrcamentoDeCustos
             // checkTotalVenda
             // 
             this.checkTotalVenda.AutoSize = true;
-            this.checkTotalVenda.Location = new System.Drawing.Point(759, 54);
+            this.checkTotalVenda.Location = new System.Drawing.Point(746, 51);
             this.checkTotalVenda.Name = "checkTotalVenda";
             this.checkTotalVenda.Size = new System.Drawing.Size(116, 17);
             this.checkTotalVenda.TabIndex = 77;
@@ -311,7 +281,7 @@ namespace OrcamentoDeCustos
             // checkTotalCusto
             // 
             this.checkTotalCusto.AutoSize = true;
-            this.checkTotalCusto.Location = new System.Drawing.Point(908, 54);
+            this.checkTotalCusto.Location = new System.Drawing.Point(925, 51);
             this.checkTotalCusto.Name = "checkTotalCusto";
             this.checkTotalCusto.Size = new System.Drawing.Size(112, 17);
             this.checkTotalCusto.TabIndex = 78;
@@ -321,6 +291,8 @@ namespace OrcamentoDeCustos
             // 
             // CodProduto
             // 
+            dataGridViewCellStyle2.NullValue = null;
+            this.CodProduto.DefaultCellStyle = dataGridViewCellStyle2;
             this.CodProduto.Frozen = true;
             this.CodProduto.HeaderText = "Cod.Produto";
             this.CodProduto.Name = "CodProduto";
@@ -336,6 +308,9 @@ namespace OrcamentoDeCustos
             // 
             // custoUni
             // 
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.custoUni.DefaultCellStyle = dataGridViewCellStyle3;
             this.custoUni.HeaderText = "Custo unit.";
             this.custoUni.Name = "custoUni";
             this.custoUni.ReadOnly = true;
@@ -343,6 +318,9 @@ namespace OrcamentoDeCustos
             // 
             // janeiro
             // 
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.janeiro.DefaultCellStyle = dataGridViewCellStyle4;
             this.janeiro.HeaderText = "Janeiro";
             this.janeiro.Name = "janeiro";
             this.janeiro.ReadOnly = true;
@@ -350,6 +328,9 @@ namespace OrcamentoDeCustos
             // 
             // janCusto
             // 
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.janCusto.DefaultCellStyle = dataGridViewCellStyle5;
             this.janCusto.HeaderText = "Jan. custo";
             this.janCusto.Name = "janCusto";
             this.janCusto.ReadOnly = true;
@@ -357,6 +338,9 @@ namespace OrcamentoDeCustos
             // 
             // fevereiro
             // 
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.fevereiro.DefaultCellStyle = dataGridViewCellStyle6;
             this.fevereiro.HeaderText = "Fevereiro";
             this.fevereiro.Name = "fevereiro";
             this.fevereiro.ReadOnly = true;
@@ -364,6 +348,9 @@ namespace OrcamentoDeCustos
             // 
             // fevCusto
             // 
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.fevCusto.DefaultCellStyle = dataGridViewCellStyle7;
             this.fevCusto.HeaderText = "Fev. custo";
             this.fevCusto.Name = "fevCusto";
             this.fevCusto.ReadOnly = true;
@@ -371,6 +358,9 @@ namespace OrcamentoDeCustos
             // 
             // marco
             // 
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.marco.DefaultCellStyle = dataGridViewCellStyle8;
             this.marco.HeaderText = "Março";
             this.marco.Name = "marco";
             this.marco.ReadOnly = true;
@@ -378,6 +368,9 @@ namespace OrcamentoDeCustos
             // 
             // marCusto
             // 
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.marCusto.DefaultCellStyle = dataGridViewCellStyle9;
             this.marCusto.HeaderText = "Mar. custo";
             this.marCusto.Name = "marCusto";
             this.marCusto.ReadOnly = true;
@@ -385,6 +378,9 @@ namespace OrcamentoDeCustos
             // 
             // Abril
             // 
+            dataGridViewCellStyle10.Format = "N2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.Abril.DefaultCellStyle = dataGridViewCellStyle10;
             this.Abril.HeaderText = "Abril";
             this.Abril.Name = "Abril";
             this.Abril.ReadOnly = true;
@@ -392,6 +388,9 @@ namespace OrcamentoDeCustos
             // 
             // abrilCusto
             // 
+            dataGridViewCellStyle11.Format = "N2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.abrilCusto.DefaultCellStyle = dataGridViewCellStyle11;
             this.abrilCusto.HeaderText = "Abril custo";
             this.abrilCusto.Name = "abrilCusto";
             this.abrilCusto.ReadOnly = true;
@@ -399,6 +398,9 @@ namespace OrcamentoDeCustos
             // 
             // maio
             // 
+            dataGridViewCellStyle12.Format = "N2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.maio.DefaultCellStyle = dataGridViewCellStyle12;
             this.maio.HeaderText = "Maio";
             this.maio.Name = "maio";
             this.maio.ReadOnly = true;
@@ -406,6 +408,9 @@ namespace OrcamentoDeCustos
             // 
             // maioCusto
             // 
+            dataGridViewCellStyle13.Format = "N2";
+            dataGridViewCellStyle13.NullValue = null;
+            this.maioCusto.DefaultCellStyle = dataGridViewCellStyle13;
             this.maioCusto.HeaderText = "Maio custo";
             this.maioCusto.Name = "maioCusto";
             this.maioCusto.ReadOnly = true;
@@ -413,6 +418,9 @@ namespace OrcamentoDeCustos
             // 
             // junho
             // 
+            dataGridViewCellStyle14.Format = "N2";
+            dataGridViewCellStyle14.NullValue = null;
+            this.junho.DefaultCellStyle = dataGridViewCellStyle14;
             this.junho.HeaderText = "Junho";
             this.junho.Name = "junho";
             this.junho.ReadOnly = true;
@@ -420,6 +428,9 @@ namespace OrcamentoDeCustos
             // 
             // junCusto
             // 
+            dataGridViewCellStyle15.Format = "N2";
+            dataGridViewCellStyle15.NullValue = null;
+            this.junCusto.DefaultCellStyle = dataGridViewCellStyle15;
             this.junCusto.HeaderText = "Jun. custo";
             this.junCusto.Name = "junCusto";
             this.junCusto.ReadOnly = true;
@@ -427,6 +438,9 @@ namespace OrcamentoDeCustos
             // 
             // julho
             // 
+            dataGridViewCellStyle16.Format = "N2";
+            dataGridViewCellStyle16.NullValue = null;
+            this.julho.DefaultCellStyle = dataGridViewCellStyle16;
             this.julho.HeaderText = "Julho";
             this.julho.Name = "julho";
             this.julho.ReadOnly = true;
@@ -434,6 +448,9 @@ namespace OrcamentoDeCustos
             // 
             // julCusto
             // 
+            dataGridViewCellStyle17.Format = "N2";
+            dataGridViewCellStyle17.NullValue = null;
+            this.julCusto.DefaultCellStyle = dataGridViewCellStyle17;
             this.julCusto.HeaderText = "Jul. custo";
             this.julCusto.Name = "julCusto";
             this.julCusto.ReadOnly = true;
@@ -441,6 +458,9 @@ namespace OrcamentoDeCustos
             // 
             // agosto
             // 
+            dataGridViewCellStyle18.Format = "N2";
+            dataGridViewCellStyle18.NullValue = null;
+            this.agosto.DefaultCellStyle = dataGridViewCellStyle18;
             this.agosto.HeaderText = "Agosto";
             this.agosto.Name = "agosto";
             this.agosto.ReadOnly = true;
@@ -448,6 +468,9 @@ namespace OrcamentoDeCustos
             // 
             // agoCusto
             // 
+            dataGridViewCellStyle19.Format = "N2";
+            dataGridViewCellStyle19.NullValue = null;
+            this.agoCusto.DefaultCellStyle = dataGridViewCellStyle19;
             this.agoCusto.HeaderText = "Ago. custo";
             this.agoCusto.Name = "agoCusto";
             this.agoCusto.ReadOnly = true;
@@ -455,6 +478,9 @@ namespace OrcamentoDeCustos
             // 
             // setembro
             // 
+            dataGridViewCellStyle20.Format = "N2";
+            dataGridViewCellStyle20.NullValue = null;
+            this.setembro.DefaultCellStyle = dataGridViewCellStyle20;
             this.setembro.HeaderText = "Setembro";
             this.setembro.Name = "setembro";
             this.setembro.ReadOnly = true;
@@ -462,6 +488,9 @@ namespace OrcamentoDeCustos
             // 
             // setCusto
             // 
+            dataGridViewCellStyle21.Format = "N2";
+            dataGridViewCellStyle21.NullValue = null;
+            this.setCusto.DefaultCellStyle = dataGridViewCellStyle21;
             this.setCusto.HeaderText = "Set. custo";
             this.setCusto.Name = "setCusto";
             this.setCusto.ReadOnly = true;
@@ -469,6 +498,9 @@ namespace OrcamentoDeCustos
             // 
             // outubro
             // 
+            dataGridViewCellStyle22.Format = "N2";
+            dataGridViewCellStyle22.NullValue = null;
+            this.outubro.DefaultCellStyle = dataGridViewCellStyle22;
             this.outubro.HeaderText = "Outubro";
             this.outubro.Name = "outubro";
             this.outubro.ReadOnly = true;
@@ -476,6 +508,9 @@ namespace OrcamentoDeCustos
             // 
             // outCusto
             // 
+            dataGridViewCellStyle23.Format = "N2";
+            dataGridViewCellStyle23.NullValue = null;
+            this.outCusto.DefaultCellStyle = dataGridViewCellStyle23;
             this.outCusto.HeaderText = "Out. custo";
             this.outCusto.Name = "outCusto";
             this.outCusto.ReadOnly = true;
@@ -483,6 +518,9 @@ namespace OrcamentoDeCustos
             // 
             // novembro
             // 
+            dataGridViewCellStyle24.Format = "N2";
+            dataGridViewCellStyle24.NullValue = null;
+            this.novembro.DefaultCellStyle = dataGridViewCellStyle24;
             this.novembro.HeaderText = "Novembro";
             this.novembro.Name = "novembro";
             this.novembro.ReadOnly = true;
@@ -490,6 +528,9 @@ namespace OrcamentoDeCustos
             // 
             // novCusto
             // 
+            dataGridViewCellStyle25.Format = "N2";
+            dataGridViewCellStyle25.NullValue = null;
+            this.novCusto.DefaultCellStyle = dataGridViewCellStyle25;
             this.novCusto.HeaderText = "Nov. custo";
             this.novCusto.Name = "novCusto";
             this.novCusto.ReadOnly = true;
@@ -497,6 +538,9 @@ namespace OrcamentoDeCustos
             // 
             // Dezembro
             // 
+            dataGridViewCellStyle26.Format = "N2";
+            dataGridViewCellStyle26.NullValue = null;
+            this.Dezembro.DefaultCellStyle = dataGridViewCellStyle26;
             this.Dezembro.HeaderText = "Dezembro";
             this.Dezembro.Name = "Dezembro";
             this.Dezembro.ReadOnly = true;
@@ -504,6 +548,9 @@ namespace OrcamentoDeCustos
             // 
             // dezCusto
             // 
+            dataGridViewCellStyle27.Format = "N2";
+            dataGridViewCellStyle27.NullValue = null;
+            this.dezCusto.DefaultCellStyle = dataGridViewCellStyle27;
             this.dezCusto.HeaderText = "Dez. custo";
             this.dezCusto.Name = "dezCusto";
             this.dezCusto.ReadOnly = true;
@@ -511,6 +558,9 @@ namespace OrcamentoDeCustos
             // 
             // total
             // 
+            dataGridViewCellStyle28.Format = "N2";
+            dataGridViewCellStyle28.NullValue = null;
+            this.total.DefaultCellStyle = dataGridViewCellStyle28;
             this.total.HeaderText = "Total";
             this.total.Name = "total";
             this.total.ReadOnly = true;
@@ -518,6 +568,9 @@ namespace OrcamentoDeCustos
             // 
             // totalCusto
             // 
+            dataGridViewCellStyle29.Format = "N2";
+            dataGridViewCellStyle29.NullValue = null;
+            this.totalCusto.DefaultCellStyle = dataGridViewCellStyle29;
             this.totalCusto.HeaderText = "Total custo";
             this.totalCusto.Name = "totalCusto";
             this.totalCusto.ReadOnly = true;
@@ -535,14 +588,8 @@ namespace OrcamentoDeCustos
             this.Controls.Add(this.checkCusto);
             this.Controls.Add(this.checkVenda);
             this.Controls.Add(this.dgvOrcamento);
-            this.Controls.Add(this.txtTotalPeriodo);
-            this.Controls.Add(this.txtCustoMes);
-            this.Controls.Add(this.txtVendaMes);
             this.Controls.Add(this.txtCustoUnit);
             this.Controls.Add(this.txtCountDistinct);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtCustoVenda);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Consultar);
@@ -561,14 +608,8 @@ namespace OrcamentoDeCustos
     private System.Windows.Forms.Button Consultar;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.Label label3;
-    private System.Windows.Forms.Label txtCustoVenda;
-    private System.Windows.Forms.Label label5;
     private System.Windows.Forms.TextBox txtCountDistinct;
     private System.Windows.Forms.TextBox txtCustoUnit;
-    private System.Windows.Forms.TextBox txtVendaMes;
-    private System.Windows.Forms.TextBox txtCustoMes;
-    private System.Windows.Forms.TextBox txtTotalPeriodo;
     private System.Windows.Forms.DataGridView dgvOrcamento;
     private System.Windows.Forms.CheckBox checkVenda;
     private System.Windows.Forms.CheckBox checkCusto;

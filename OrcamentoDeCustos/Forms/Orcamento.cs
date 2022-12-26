@@ -1,18 +1,36 @@
 using OrcamentoDeCustos.Connection;
 using System;
-using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using System.Windows.Forms;
+using System.Globalization;
+using System.Data;
+using System.Configuration;
 
 namespace OrcamentoDeCustos
 {
     public partial class Orcamento : Form
     {
-        public Orcamento()
+    double totalVenda = 0;
+    double valorTotalCusto = 0;
+    double jan = 0; double janC = 0;
+    double fev = 0; double fevC = 0;
+    double mar = 0; double marC = 0;
+    double abr = 0; double abrC = 0;
+    double mai = 0; double maiC = 0;
+    double jun = 0; double junC = 0;
+    double jul = 0; double julC = 0;
+    double ago = 0; double agoC = 0;
+    double set = 0; double setC = 0;
+    double oct = 0; double octC = 0;
+    double nov = 0; double novC = 0;
+    double dez = 0; double dezC = 0;
+
+    public Orcamento()
         {
             InitializeComponent();
-        }
+    }
+    
 
     private void AdicionaLinha(SqlDataReader dr)
     {
@@ -20,7 +38,6 @@ namespace OrcamentoDeCustos
       DataGridViewRow row = dgvOrcamento.Rows[dgvOrcamento.Rows.Add()];
       row.Cells["codProduto"].Value = dr["codProduto"] + "";
       row.Cells["nomeProduto"].Value = dr["nomeProduto"] + "";
-      row.Cells["custoUni"].Value = dr["custoUni"] + "";
       row.Cells["janeiro"].Value = dr["1"] + "";
       valorTotal += getDoubleValue(dr["1"]);
       row.Cells["fevereiro"].Value = dr["2"] + "";
@@ -46,6 +63,8 @@ namespace OrcamentoDeCustos
       row.Cells["dezembro"].Value = dr["12"] + "";
       valorTotal += getDoubleValue(dr["12"]);
       row.Cells["total"].Value = valorTotal;
+
+
     }
 
     private void AdicionaLinhaTodos(SqlDataReader dr)
@@ -106,6 +125,34 @@ namespace OrcamentoDeCustos
       totalCusto += getDoubleValue(dr["12c"]);
       row.Cells["total"].Value = valorTotal;
       row.Cells["totalCusto"].Value = totalCusto;
+
+      jan += getDoubleValue(dr["1"]);
+      fev += getDoubleValue(dr["2"]);
+      mar += getDoubleValue(dr["3"]);
+      abr += getDoubleValue(dr["4"]);
+      mai += getDoubleValue(dr["5"]);
+      jun += getDoubleValue(dr["6"]);
+      jul += getDoubleValue(dr["7"]);
+      ago += getDoubleValue(dr["8"]);
+      set += getDoubleValue(dr["9"]);
+      oct += getDoubleValue(dr["10"]);
+      nov += getDoubleValue(dr["11"]);
+      dez += getDoubleValue(dr["12"]);
+      totalVenda += valorTotal;
+
+      janC += getDoubleValue(dr["1c"]);
+      fevC += getDoubleValue(dr["2c"]);
+      marC += getDoubleValue(dr["3c"]);
+      abrC += getDoubleValue(dr["4c"]);
+      maiC += getDoubleValue(dr["5c"]);
+      junC += getDoubleValue(dr["6c"]);
+      julC += getDoubleValue(dr["7c"]);
+      agoC += getDoubleValue(dr["8c"]);
+      setC += getDoubleValue(dr["9c"]);
+      octC += getDoubleValue(dr["10c"]);
+      novC += getDoubleValue(dr["11c"]);
+      dezC += getDoubleValue(dr["12c"]);
+      valorTotalCusto += totalCusto;
     }
 
     private double getDoubleValue(object obj)
@@ -127,9 +174,9 @@ namespace OrcamentoDeCustos
           cn.Open();
 
           StringBuilder sql = new StringBuilder();
-          sql.AppendLine($@"select top 100 * from (select  codProduto, month(data) as mes, convert(varchar, month(data)) + 'c' as mesc,
-          nomeProduto, custoUni,sum(valorVenda) as Total, sum(custoTotal) as Custo from MvtVendasEstruturaConsultaMes where year(data) ='" + comboAno.Text + "' " +
-          "group by codProduto, nomeProduto, custoUni, data) as p Pivot(Sum(Total)for mes in ([1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12]) ) as tabPivot" +
+          sql.AppendLine($@"select top 100 * from (select codProduto, month(data) as mes, convert(varchar, month(data)) + 'c' as mesc,
+          nomeProduto,sum(valorVenda) as Total, sum(custoTotal) as Custo from MvtVendasEstruturaConsultaMes where year(data) ='" + comboAno.Text + "' " +
+          "group by codProduto, nomeProduto, data) as p Pivot(Sum(Total)for mes in ([1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12]) ) as tabPivot" +
           "  Pivot(Sum(Custo)for mesc in ([1c], [2c], [3c], [4c], [5c], [6c], [7c], [8c], [9c], [10c], [11c], [12c]) ) as tabPivott");
 
           SqlCommand sqlCommand = cn.CreateCommand();
@@ -141,6 +188,7 @@ namespace OrcamentoDeCustos
             {
               AdicionaLinha(dr);
             }
+
           }
 
 
@@ -167,7 +215,7 @@ namespace OrcamentoDeCustos
           cn.Open();
 
           StringBuilder sql = new StringBuilder();
-          sql.AppendLine($@"select top 100 * from (select  codProduto, month(data) as mes, convert(varchar, month(data)) + 'c' as mesc, nomeProduto, custoUni,sum(valorVenda) as Total, sum(custoTotal) as Custo from MvtVendasEstruturaConsultaMes where year(data) ='" + comboAno.Text + "' group by codProduto, nomeProduto, custoUni, data) as p Pivot(Sum(Total)for mes in ([1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12]) ) as tabPivot  Pivot(Sum(Custo)for mesc in ([1c], [2c], [3c], [4c], [5c], [6c], [7c], [8c], [9c], [10c], [11c], [12c]) ) as tabPivott");
+          sql.AppendLine($@"select top 50 * from (select  codProduto, month(data) as mes, convert(varchar, month(data)) + 'c' as mesc, nomeProduto, custoUni,sum(valorVenda) as Total, sum(custoTotal) as Custo from MvtVendasEstruturaConsultaMes where year(data) ='" + comboAno.Text + "' group by codProduto, nomeProduto, custoUni, data) as p Pivot(Sum(Total)for mes in ([1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12]) ) as tabPivot  Pivot(Sum(Custo)for mesc in ([1c], [2c], [3c], [4c], [5c], [6c], [7c], [8c], [9c], [10c], [11c], [12c]) ) as tabPivott");
 
           SqlCommand sqlCommand = cn.CreateCommand();
           sqlCommand.CommandText = sql.ToString();
@@ -178,15 +226,77 @@ namespace OrcamentoDeCustos
             {
               AdicionaLinhaTodos(dr);
             }
+            
+            DataGridViewRow row =
+              dgvOrcamento.Rows[dgvOrcamento.Rows.Add()];
+            row.Cells["janeiro"].Value = jan;
+            row.Cells["janCusto"].Value = janC;
+            row.Cells["fevereiro"].Value = fev;
+            row.Cells["fevCusto"].Value = fevC;
+            row.Cells["marco"].Value = mar;
+            row.Cells["marCusto"].Value = marC;
+            row.Cells["abril"].Value = abr;
+            row.Cells["abrilCusto"].Value = abrC;
+            row.Cells["maio"].Value = mai;
+            row.Cells["maioCusto"].Value = maiC;
+            row.Cells["junho"].Value = jun;
+            row.Cells["junCusto"].Value = junC;
+            row.Cells["julho"].Value = jul;
+            row.Cells["julCusto"].Value = julC;
+            row.Cells["agosto"].Value = ago;
+            row.Cells["agoCusto"].Value = agoC;
+            row.Cells["setembro"].Value = set;
+            row.Cells["setCusto"].Value = setC;
+            row.Cells["outubro"].Value = oct;
+            row.Cells["outCusto"].Value = octC;
+            row.Cells["novembro"].Value = nov;
+            row.Cells["novCusto"].Value = novC;
+            row.Cells["dezembro"].Value = dez;
+            row.Cells["dezCusto"].Value = dezC;
+            row.Cells["total"].Value = totalVenda;
+            row.Cells["totalCusto"].Value = valorTotalCusto;
+            row.Cells["codProduto"].Value = "Total";
           }
-
-
         }
       }
       catch (Exception)
       {
 
         throw;
+      }
+
+      txtCountDistinct.Text = GetRecordCount(txtCountDistinct.Text).ToString();
+
+      double soma = 0;
+      double resultado;
+      for (int i = 0; i < dgvOrcamento.Rows.Count; i++)
+      {
+        resultado = (soma += Convert.ToDouble(dgvOrcamento.Rows[i].Cells[2].Value)) / dgvOrcamento.Rows.Count;
+        txtCustoUnit.Text = resultado.ToString("F");
+      }
+    }
+    private int GetRecordCount(string myParameter)
+    {
+      using (SqlConnection cn = new SqlConnection(Conn.StrCon))
+      {
+        Int32 count = 0;
+        string sql = "SELECT COUNT(distinct codProduto) FROM MvtVendasEstruturaConsultaMes WHERE codProduto = codProduto";
+        using (SqlConnection conn = new SqlConnection(Conn.StrCon))
+        {
+          SqlCommand cmd = new SqlCommand(sql, conn);
+          cmd.Parameters.Add("@codProduto", SqlDbType.VarChar);
+          cmd.Parameters["@codProduto"].Value = myParameter;
+          try
+          {
+            conn.Open();
+            count = (Int32)cmd.ExecuteScalar();
+          }
+          catch (Exception ex)
+          {
+
+          }
+        }
+        return (int)count;
       }
     }
 
