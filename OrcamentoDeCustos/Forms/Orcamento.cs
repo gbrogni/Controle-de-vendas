@@ -3,13 +3,12 @@ using System;
 using System.Data.SqlClient;
 using System.Text;
 using System.Windows.Forms;
-using System.Globalization;
 using System.Data;
-using System.Configuration;
+using System.Collections.Generic;
 
 namespace OrcamentoDeCustos
 {
-    public partial class Orcamento : Form
+  public partial class Orcamento : Form
     {
     double totalVenda = 0;
     double valorTotalCusto = 0;
@@ -26,6 +25,9 @@ namespace OrcamentoDeCustos
     double nov = 0; double novC = 0;
     double dez = 0; double dezC = 0;
 
+    double media = 0;
+    double Av = 0;
+
     public Orcamento()
         {
             InitializeComponent();
@@ -38,29 +40,29 @@ namespace OrcamentoDeCustos
       DataGridViewRow row = dgvOrcamento.Rows[dgvOrcamento.Rows.Add()];
       row.Cells["codProduto"].Value = dr["codProduto"] + "";
       row.Cells["nomeProduto"].Value = dr["nomeProduto"] + "";
-      row.Cells["janeiro"].Value = dr["1"] + "";
+      row.Cells["venda1"].Value = dr["1"] + "";
       valorTotal += getDoubleValue(dr["1"]);
-      row.Cells["fevereiro"].Value = dr["2"] + "";
+      row.Cells["venda2"].Value = dr["2"] + "";
       valorTotal += getDoubleValue(dr["2"]);
-      row.Cells["marco"].Value = dr["3"] + "";
+      row.Cells["venda3"].Value = dr["3"] + "";
       valorTotal += getDoubleValue(dr["3"]);
-      row.Cells["abril"].Value = dr["4"] + "";
+      row.Cells["venda4"].Value = dr["4"] + "";
       valorTotal += getDoubleValue(dr["4"]);
-      row.Cells["maio"].Value = dr["5"] + "";
+      row.Cells["venda5"].Value = dr["5"] + "";
       valorTotal += getDoubleValue(dr["5"]);
-      row.Cells["junho"].Value = dr["6"] + "";
+      row.Cells["venda6"].Value = dr["6"] + "";
       valorTotal += getDoubleValue(dr["6"]);
-      row.Cells["julho"].Value = dr["7"] + "";
+      row.Cells["venda7"].Value = dr["7"] + "";
       valorTotal += getDoubleValue(dr["7"]);
-      row.Cells["agosto"].Value = dr["8"] + "";
+      row.Cells["venda8"].Value = dr["8"] + "";
       valorTotal += getDoubleValue(dr["8"]);
-      row.Cells["setembro"].Value = dr["9"] + "";
+      row.Cells["venda9"].Value = dr["9"] + "";
       valorTotal += getDoubleValue(dr["9"]);
-      row.Cells["outubro"].Value = dr["10"] + "";
+      row.Cells["venda10"].Value = dr["10"] + "";
       valorTotal += getDoubleValue(dr["10"]);
-      row.Cells["novembro"].Value = dr["11"] + "";
+      row.Cells["venda11"].Value = dr["11"] + "";
       valorTotal += getDoubleValue(dr["11"]);
-      row.Cells["dezembro"].Value = dr["12"] + "";
+      row.Cells["venda12"].Value = dr["12"] + "";
       valorTotal += getDoubleValue(dr["12"]);
       row.Cells["total"].Value = valorTotal;
 
@@ -74,54 +76,54 @@ namespace OrcamentoDeCustos
       DataGridViewRow row = dgvOrcamento.Rows[dgvOrcamento.Rows.Add()];
       row.Cells["codProduto"].Value = dr["codProduto"] + "";
       row.Cells["nomeProduto"].Value = dr["nomeProduto"] + "";
-      row.Cells["custoUni"].Value = dr["custoUni"] + "";
-      row.Cells["janeiro"].Value = dr["1"] + "";
+      row.Cells["custoUni"].Value  = dr["custoUni"] + "";
+      row.Cells["venda1"].Value = dr["1"] + "";
       valorTotal += getDoubleValue(dr["1"]);
-      row.Cells["janCusto"].Value = dr["1c"] + "";
+      row.Cells["custo1"].Value = dr["1c"] + "";
       totalCusto += getDoubleValue(dr["1c"]);
-      row.Cells["fevereiro"].Value = dr["2"] + "";
+      row.Cells["venda2"].Value = dr["2"] + "";
       valorTotal += getDoubleValue(dr["2"]);
-      row.Cells["fevCusto"].Value = dr["2c"] + "";
+      row.Cells["custo2"].Value = dr["2c"] + "";
       totalCusto += getDoubleValue(dr["2c"]);
-      row.Cells["marco"].Value = dr["3"] + "";
+      row.Cells["venda3"].Value = dr["3"] + "";
       valorTotal += getDoubleValue(dr["3"]);
-      row.Cells["marCusto"].Value = dr["3c"] + "";
+      row.Cells["custo3"].Value = dr["3c"] + "";
       totalCusto += getDoubleValue(dr["3c"]);
-      row.Cells["abril"].Value = dr["4"] + "";
+      row.Cells["venda4"].Value = dr["4"] + "";
       valorTotal += getDoubleValue(dr["4"]);
-      row.Cells["abrilCusto"].Value = dr["4c"] + "";
+      row.Cells["custo4"].Value = dr["4c"] + "";
       totalCusto += getDoubleValue(dr["4c"]);
-      row.Cells["maio"].Value = dr["5"] + "";
+      row.Cells["venda5"].Value = dr["5"] + "";
       valorTotal += getDoubleValue(dr["5"]);
-      row.Cells["maioCusto"].Value = dr["5c"] + "";
+      row.Cells["custo5"].Value = dr["5c"] + "";
       totalCusto += getDoubleValue(dr["5c"]);
-      row.Cells["junho"].Value = dr["6"] + "";
+      row.Cells["venda6"].Value = dr["6"] + "";
       valorTotal += getDoubleValue(dr["6"]);
-      row.Cells["junCusto"].Value = dr["6c"] + "";
+      row.Cells["custo6"].Value = dr["6c"] + "";
       totalCusto += getDoubleValue(dr["6c"]);
-      row.Cells["julho"].Value = dr["7"] + "";
+      row.Cells["venda7"].Value = dr["7"] + "";
       valorTotal += getDoubleValue(dr["7"]);
-      row.Cells["julCusto"].Value = dr["7c"] + "";
+      row.Cells["custo7"].Value = dr["7c"] + "";
       totalCusto += getDoubleValue(dr["7c"]);
-      row.Cells["agosto"].Value = dr["8"] + "";
+      row.Cells["venda8"].Value = dr["8"] + "";
       valorTotal += getDoubleValue(dr["8"]);
-      row.Cells["agoCusto"].Value = dr["8c"] + "";
+      row.Cells["custo8"].Value = dr["8c"] + "";
       totalCusto += getDoubleValue(dr["8c"]);
-      row.Cells["setembro"].Value = dr["9"] + "";
+      row.Cells["venda9"].Value = dr["9"] + "";
       valorTotal += getDoubleValue(dr["9"]);
-      row.Cells["setCusto"].Value = dr["9c"] + "";
+      row.Cells["custo9"].Value = dr["9c"] + "";
       totalCusto += getDoubleValue(dr["9c"]);
-      row.Cells["outubro"].Value = dr["10"] + "";
+      row.Cells["venda10"].Value = dr["10"] + "";
       valorTotal += getDoubleValue(dr["10"]);
-      row.Cells["outCusto"].Value = dr["10c"] + "";
+      row.Cells["custo10"].Value = dr["10c"] + "";
       totalCusto += getDoubleValue(dr["10c"]);
-      row.Cells["novembro"].Value = dr["11"] + "";
+      row.Cells["venda11"].Value = dr["11"] + "";
       valorTotal += getDoubleValue(dr["11"]);
-      row.Cells["novCusto"].Value = dr["11c"] + "";
+      row.Cells["custo11"].Value = dr["11c"] + "";
       totalCusto += getDoubleValue(dr["11c"]);
-      row.Cells["dezembro"].Value = dr["12"] + "";
+      row.Cells["venda12"].Value = dr["12"] + "";
       valorTotal += getDoubleValue(dr["12"]);
-      row.Cells["dezCusto"].Value = dr["12c"] + "";
+      row.Cells["custo12"].Value = dr["12c"] + "";
       totalCusto += getDoubleValue(dr["12c"]);
       row.Cells["total"].Value = valorTotal;
       row.Cells["totalCusto"].Value = totalCusto;
@@ -215,7 +217,15 @@ namespace OrcamentoDeCustos
           cn.Open();
 
           StringBuilder sql = new StringBuilder();
-          sql.AppendLine($@"select top 50 * from (select  codProduto, month(data) as mes, convert(varchar, month(data)) + 'c' as mesc, nomeProduto, custoUni,sum(valorVenda) as Total, sum(custoTotal) as Custo from MvtVendasEstruturaConsultaMes where year(data) ='" + comboAno.Text + "' group by codProduto, nomeProduto, custoUni, data) as p Pivot(Sum(Total)for mes in ([1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12]) ) as tabPivot  Pivot(Sum(Custo)for mesc in ([1c], [2c], [3c], [4c], [5c], [6c], [7c], [8c], [9c], [10c], [11c], [12c]) ) as tabPivott");
+          sql.AppendLine($@"select top 100 * from (select  codProduto, month(data) as mes, convert(varchar, month(data)) + 'c' as mesc, nomeProduto, custoUni,sum(valorVenda) as Total, sum(custoTotal) as Custo from MvtVendasEstruturaConsultaMes where year(data) ='" + comboAno.Text + "' group by codProduto, nomeProduto, custoUni, data) as p Pivot(Sum(Total)for mes in ([1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12]) ) as tabPivot  Pivot(Sum(Custo)for mesc in ([1c], [2c], [3c], [4c], [5c], [6c], [7c], [8c], [9c], [10c], [11c], [12c]) ) as tabPivott");
+
+          StringBuilder med = new StringBuilder();
+          med.AppendLine($@"select AVG(custoUni) from MvtVendasEstruturaConsultaMes
+                                       where custoTotal != 0 and tipo = 'F' and codEmpresa = 1 and YEAR(data) = '{comboAno.Text}'");
+
+          SqlCommand cmd = cn.CreateCommand();
+          cmd.CommandText = med.ToString();
+          media = (double)cmd.ExecuteScalar();
 
           SqlCommand sqlCommand = cn.CreateCommand();
           sqlCommand.CommandText = sql.ToString();
@@ -229,31 +239,32 @@ namespace OrcamentoDeCustos
             
             DataGridViewRow row =
               dgvOrcamento.Rows[dgvOrcamento.Rows.Add()];
-            row.Cells["janeiro"].Value = jan;
-            row.Cells["janCusto"].Value = janC;
-            row.Cells["fevereiro"].Value = fev;
-            row.Cells["fevCusto"].Value = fevC;
-            row.Cells["marco"].Value = mar;
-            row.Cells["marCusto"].Value = marC;
-            row.Cells["abril"].Value = abr;
-            row.Cells["abrilCusto"].Value = abrC;
-            row.Cells["maio"].Value = mai;
-            row.Cells["maioCusto"].Value = maiC;
-            row.Cells["junho"].Value = jun;
-            row.Cells["junCusto"].Value = junC;
-            row.Cells["julho"].Value = jul;
-            row.Cells["julCusto"].Value = julC;
-            row.Cells["agosto"].Value = ago;
-            row.Cells["agoCusto"].Value = agoC;
-            row.Cells["setembro"].Value = set;
-            row.Cells["setCusto"].Value = setC;
-            row.Cells["outubro"].Value = oct;
-            row.Cells["outCusto"].Value = octC;
-            row.Cells["novembro"].Value = nov;
-            row.Cells["novCusto"].Value = novC;
-            row.Cells["dezembro"].Value = dez;
-            row.Cells["dezCusto"].Value = dezC;
+            row.Cells["venda1"].Value = jan;
+            row.Cells["custo1"].Value = janC;
+            row.Cells["venda2"].Value = fev;
+            row.Cells["custo2"].Value = fevC;
+            row.Cells["venda3"].Value = mar;
+            row.Cells["custo3"].Value = marC;
+            row.Cells["venda4"].Value = abr;
+            row.Cells["custo4"].Value = abrC;
+            row.Cells["venda5"].Value = mai;
+            row.Cells["custo5"].Value = maiC;
+            row.Cells["venda6"].Value = jun;
+            row.Cells["custo6"].Value = junC;
+            row.Cells["venda7"].Value = jul;
+            row.Cells["custo7"].Value = julC;
+            row.Cells["venda8"].Value = ago;
+            row.Cells["custo8"].Value = agoC;
+            row.Cells["venda9"].Value = set;
+            row.Cells["custo9"].Value = setC;
+            row.Cells["venda10"].Value = oct;
+            row.Cells["custo10"].Value = octC;
+            row.Cells["venda11"].Value = nov;
+            row.Cells["custo11"].Value = novC;
+            row.Cells["venda12"].Value = dez;
+            row.Cells["custo12"].Value = dezC;
             row.Cells["total"].Value = totalVenda;
+            row.Cells["custoUni"].Value = media;
             row.Cells["totalCusto"].Value = valorTotalCusto;
             row.Cells["codProduto"].Value = "Total";
           }
@@ -263,16 +274,17 @@ namespace OrcamentoDeCustos
       {
 
         throw;
-      }
+      }      
 
-      txtCountDistinct.Text = GetRecordCount(txtCountDistinct.Text).ToString();
+      count.Text = GetRecordCount(count.Text).ToString();
 
       double soma = 0;
       double resultado;
       for (int i = 0; i < dgvOrcamento.Rows.Count; i++)
       {
         resultado = (soma += Convert.ToDouble(dgvOrcamento.Rows[i].Cells[2].Value)) / dgvOrcamento.Rows.Count;
-        txtCustoUnit.Text = resultado.ToString("F");
+       
+        //txtCustoUnit.Text = resultado.ToString("F");
       }
     }
     private int GetRecordCount(string myParameter)
@@ -394,6 +406,128 @@ namespace OrcamentoDeCustos
       {
         dgvOrcamento.Columns["totalCusto"].Visible = true;
       }
+    }
+
+    private void checkAV_CheckedChanged(object sender, EventArgs e)
+    {
+      if (Av == 0)
+      {
+        List<string> lista = new List<string>();
+        lista.Add("jan");
+        lista.Add("fev");
+        lista.Add("mar");
+        lista.Add("abr");
+        lista.Add("mai");
+        lista.Add("jun");
+        lista.Add("jul");
+        lista.Add("ago");
+        lista.Add("set");
+        lista.Add("out");
+        lista.Add("nov");
+        lista.Add("dez");
+        for (int i = 0; i < 12; i++)
+        {
+
+          int number = dgvOrcamento.Rows.Count;
+          for (int linhas = 0; linhas < number; linhas++)
+          {
+            if (dgvOrcamento.Rows[linhas].Cells[$"venda{i + 1}"].Value.ToString().Length > 0)
+            {
+              decimal a = System.Convert.ToDecimal(dgvOrcamento.Rows[linhas].Cells[$"venda{i + 1}"].Value.ToString());
+              decimal na = System.Convert.ToDecimal(dgvOrcamento.Rows[number - 1].Cells[$"venda{i + 1}"].Value.ToString());
+              if (na != 0 && a != 0)
+              {
+                var resulta = (a * 100) / na;
+                dgvOrcamento.Rows[linhas].Cells[$"{lista[i]}AvVenda"].Value = Math.Round(resulta, 2) + "%".ToString();
+              }
+
+              decimal b = System.Convert.ToDecimal(dgvOrcamento.Rows[linhas].Cells[$"Custo{i + 1}"].Value.ToString());
+              decimal nb = System.Convert.ToDecimal(dgvOrcamento.Rows[number - 1].Cells[$"Custo{i + 1}"].Value.ToString());
+              if (nb != 0 && b != 0)
+              {
+                var resultb = (b * 100) / nb;
+                dgvOrcamento.Rows[linhas].Cells[$"{lista[i]}AvCusto"].Value = Math.Round(resultb, 2) + "%".ToString();
+              }
+            }
+            if (i == 0)
+            {
+              decimal b = System.Convert.ToDecimal(dgvOrcamento.Rows[linhas].Cells[$"total"].Value.ToString());
+              decimal nb = System.Convert.ToDecimal(dgvOrcamento.Rows[number - 1].Cells[$"total"].Value.ToString());
+              var resultb = (b * 100) / nb;
+              dgvOrcamento.Rows[linhas].Cells[$"totAvVenda"].Value = Math.Round(resultb, 2) + "%".ToString();
+
+              decimal a = System.Convert.ToDecimal(dgvOrcamento.Rows[linhas].Cells[$"totalCusto"].Value.ToString());
+              decimal na = System.Convert.ToDecimal(dgvOrcamento.Rows[number - 1].Cells[$"totalCusto"].Value.ToString());
+              var resulta = (a * 100) / na;
+              dgvOrcamento.Rows[linhas].Cells[$"totAvCusto"].Value = Math.Round(resulta, 2) + "%".ToString();
+            }
+
+          }
+        }
+      }
+      if (dgvOrcamento.Columns["janAvVenda"].Visible == false)
+      {
+        dgvOrcamento.Columns["janAvVenda"].Visible = true;
+        dgvOrcamento.Columns["fevAvVenda"].Visible = true;
+        dgvOrcamento.Columns["marAvVenda"].Visible = true;
+        dgvOrcamento.Columns["abrAvVenda"].Visible = true;
+        dgvOrcamento.Columns["maiAvVenda"].Visible = true;
+        dgvOrcamento.Columns["junAvVenda"].Visible = true;
+        dgvOrcamento.Columns["julAvVenda"].Visible = true;
+        dgvOrcamento.Columns["agoAvVenda"].Visible = true;
+        dgvOrcamento.Columns["setAvVenda"].Visible = true;
+        dgvOrcamento.Columns["outAvVenda"].Visible = true;
+        dgvOrcamento.Columns["novAvVenda"].Visible = true;
+        dgvOrcamento.Columns["dezAvVenda"].Visible = true;
+        dgvOrcamento.Columns["totAvVenda"].Visible = true;
+
+
+        dgvOrcamento.Columns["janAvCusto"].Visible = true;
+        dgvOrcamento.Columns["fevAvCusto"].Visible = true;
+        dgvOrcamento.Columns["marAvCusto"].Visible = true;
+        dgvOrcamento.Columns["abrAvCusto"].Visible = true;
+        dgvOrcamento.Columns["maiAvCusto"].Visible = true;
+        dgvOrcamento.Columns["junAvCusto"].Visible = true;
+        dgvOrcamento.Columns["julAvCusto"].Visible = true;
+        dgvOrcamento.Columns["agoAvCusto"].Visible = true;
+        dgvOrcamento.Columns["setAvCusto"].Visible = true;
+        dgvOrcamento.Columns["outAvCusto"].Visible = true;
+        dgvOrcamento.Columns["novAvCusto"].Visible = true;
+        dgvOrcamento.Columns["dezAvCusto"].Visible = true;
+        dgvOrcamento.Columns["totAvCusto"].Visible = true;
+      }
+      else
+      {
+        dgvOrcamento.Columns["janAvVenda"].Visible = false;
+        dgvOrcamento.Columns["fevAvVenda"].Visible = false;
+        dgvOrcamento.Columns["marAvVenda"].Visible = false;
+        dgvOrcamento.Columns["abrAvVenda"].Visible = false;
+        dgvOrcamento.Columns["maiAvVenda"].Visible = false;
+        dgvOrcamento.Columns["junAvVenda"].Visible = false;
+        dgvOrcamento.Columns["julAvVenda"].Visible = false;
+        dgvOrcamento.Columns["agoAvVenda"].Visible = false;
+        dgvOrcamento.Columns["setAvVenda"].Visible = false;
+        dgvOrcamento.Columns["outAvVenda"].Visible = false;
+        dgvOrcamento.Columns["novAvVenda"].Visible = false;
+        dgvOrcamento.Columns["dezAvVenda"].Visible = false;
+        dgvOrcamento.Columns["totAvVenda"].Visible = false;
+
+
+        dgvOrcamento.Columns["janAvCusto"].Visible = false;
+        dgvOrcamento.Columns["fevAvCusto"].Visible = false;
+        dgvOrcamento.Columns["marAvCusto"].Visible = false;
+        dgvOrcamento.Columns["abrAvCusto"].Visible = false;
+        dgvOrcamento.Columns["maiAvCusto"].Visible = false;
+        dgvOrcamento.Columns["junAvCusto"].Visible = false;
+        dgvOrcamento.Columns["julAvCusto"].Visible = false;
+        dgvOrcamento.Columns["agoAvCusto"].Visible = false;
+        dgvOrcamento.Columns["setAvCusto"].Visible = false;
+        dgvOrcamento.Columns["outAvCusto"].Visible = false;
+        dgvOrcamento.Columns["novAvCusto"].Visible = false;
+        dgvOrcamento.Columns["dezAvCusto"].Visible = false;
+        dgvOrcamento.Columns["totAvCusto"].Visible = false;
+      }
+      Av = 1;
     }
   }
 }
