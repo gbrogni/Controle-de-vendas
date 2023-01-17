@@ -278,14 +278,6 @@ namespace OrcamentoDeCustos
 
       count.Text = GetRecordCount(count.Text).ToString();
 
-      double soma = 0;
-      double resultado;
-      for (int i = 0; i < dgvOrcamento.Rows.Count; i++)
-      {
-        resultado = (soma += Convert.ToDouble(dgvOrcamento.Rows[i].Cells[2].Value)) / dgvOrcamento.Rows.Count;
-       
-        //txtCustoUnit.Text = resultado.ToString("F");
-      }
     }
     private int GetRecordCount(string myParameter)
     {
@@ -433,16 +425,16 @@ namespace OrcamentoDeCustos
           {
             if (dgvOrcamento.Rows[linhas].Cells[$"venda{i + 1}"].Value.ToString().Length > 0)
             {
-              decimal a = System.Convert.ToDecimal(dgvOrcamento.Rows[linhas].Cells[$"venda{i + 1}"].Value.ToString());
-              decimal na = System.Convert.ToDecimal(dgvOrcamento.Rows[number - 1].Cells[$"venda{i + 1}"].Value.ToString());
+              decimal a = Convert.ToDecimal(dgvOrcamento.Rows[linhas].Cells[$"venda{i + 1}"].Value.ToString());
+              decimal na = Convert.ToDecimal(dgvOrcamento.Rows[number - 1].Cells[$"venda{i + 1}"].Value.ToString());
               if (na != 0 && a != 0)
               {
                 var resulta = (a * 100) / na;
                 dgvOrcamento.Rows[linhas].Cells[$"{lista[i]}AvVenda"].Value = Math.Round(resulta, 2) + "%".ToString();
               }
 
-              decimal b = System.Convert.ToDecimal(dgvOrcamento.Rows[linhas].Cells[$"Custo{i + 1}"].Value.ToString());
-              decimal nb = System.Convert.ToDecimal(dgvOrcamento.Rows[number - 1].Cells[$"Custo{i + 1}"].Value.ToString());
+              decimal b = Convert.ToDecimal(dgvOrcamento.Rows[linhas].Cells[$"Custo{i + 1}"].Value.ToString());
+              decimal nb = Convert.ToDecimal(dgvOrcamento.Rows[number - 1].Cells[$"Custo{i + 1}"].Value.ToString());
               if (nb != 0 && b != 0)
               {
                 var resultb = (b * 100) / nb;
@@ -451,13 +443,13 @@ namespace OrcamentoDeCustos
             }
             if (i == 0)
             {
-              decimal b = System.Convert.ToDecimal(dgvOrcamento.Rows[linhas].Cells[$"total"].Value.ToString());
-              decimal nb = System.Convert.ToDecimal(dgvOrcamento.Rows[number - 1].Cells[$"total"].Value.ToString());
+              decimal b = Convert.ToDecimal(dgvOrcamento.Rows[linhas].Cells[$"total"].Value.ToString());
+              decimal nb = Convert.ToDecimal(dgvOrcamento.Rows[number - 1].Cells[$"total"].Value.ToString());
               var resultb = (b * 100) / nb;
               dgvOrcamento.Rows[linhas].Cells[$"totAvVenda"].Value = Math.Round(resultb, 2) + "%".ToString();
 
-              decimal a = System.Convert.ToDecimal(dgvOrcamento.Rows[linhas].Cells[$"totalCusto"].Value.ToString());
-              decimal na = System.Convert.ToDecimal(dgvOrcamento.Rows[number - 1].Cells[$"totalCusto"].Value.ToString());
+              decimal a = Convert.ToDecimal(dgvOrcamento.Rows[linhas].Cells[$"totalCusto"].Value.ToString());
+              decimal na = Convert.ToDecimal(dgvOrcamento.Rows[number - 1].Cells[$"totalCusto"].Value.ToString());
               var resulta = (a * 100) / na;
               dgvOrcamento.Rows[linhas].Cells[$"totAvCusto"].Value = Math.Round(resulta, 2) + "%".ToString();
             }
@@ -528,6 +520,11 @@ namespace OrcamentoDeCustos
         dgvOrcamento.Columns["totAvCusto"].Visible = false;
       }
       Av = 1;
+    }
+
+    private void checkCustoXVenda_CheckedChanged(object sender, EventArgs e)
+    {
+
     }
   }
 }
