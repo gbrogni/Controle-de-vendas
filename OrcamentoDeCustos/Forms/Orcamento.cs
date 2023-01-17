@@ -9,7 +9,7 @@ using System.Collections.Generic;
 namespace OrcamentoDeCustos
 {
   public partial class Orcamento : Form
-    {
+  {
     double totalVenda = 0;
     double valorTotalCusto = 0;
     double jan = 0; double janC = 0;
@@ -27,12 +27,13 @@ namespace OrcamentoDeCustos
 
     double media = 0;
     double Av = 0;
+    double Lucros = 0;
 
     public Orcamento()
-        {
-            InitializeComponent();
+    {
+      InitializeComponent();
     }
-    
+
 
     private void AdicionaLinha(SqlDataReader dr)
     {
@@ -76,7 +77,7 @@ namespace OrcamentoDeCustos
       DataGridViewRow row = dgvOrcamento.Rows[dgvOrcamento.Rows.Add()];
       row.Cells["codProduto"].Value = dr["codProduto"] + "";
       row.Cells["nomeProduto"].Value = dr["nomeProduto"] + "";
-      row.Cells["custoUni"].Value  = dr["custoUni"] + "";
+      row.Cells["custoUni"].Value = dr["custoUni"] + "";
       row.Cells["venda1"].Value = dr["1"] + "";
       valorTotal += getDoubleValue(dr["1"]);
       row.Cells["custo1"].Value = dr["1c"] + "";
@@ -236,7 +237,7 @@ namespace OrcamentoDeCustos
             {
               AdicionaLinhaTodos(dr);
             }
-            
+
             DataGridViewRow row =
               dgvOrcamento.Rows[dgvOrcamento.Rows.Add()];
             row.Cells["venda1"].Value = jan;
@@ -274,7 +275,7 @@ namespace OrcamentoDeCustos
       {
 
         throw;
-      }      
+      }
 
       count.Text = GetRecordCount(count.Text).ToString();
 
@@ -524,7 +525,72 @@ namespace OrcamentoDeCustos
 
     private void checkCustoXVenda_CheckedChanged(object sender, EventArgs e)
     {
+      if (Lucros == 0)
+      {
+        List<string> lista = new List<string>();
+        lista.Add("Jan");
+        lista.Add("Fev");
+        lista.Add("Mar");
+        lista.Add("Abr");
+        lista.Add("Mai");
+        lista.Add("Jun");
+        lista.Add("Jul");
+        lista.Add("Ago");
+        lista.Add("Set");
+        lista.Add("Out");
+        lista.Add("Nov");
+        lista.Add("Dez");
+        for (int i = 0; i < 12; i++)
+        {
 
+          int number = dgvOrcamento.Rows.Count;
+          for (int linhas = 0; linhas < number; linhas++)
+          {
+            if (dgvOrcamento.Rows[linhas].Cells[$"venda{i + 1}"].Value.ToString().Length > 0)
+            {
+              decimal receita = Convert.ToDecimal(dgvOrcamento.Rows[linhas].Cells[$"venda{i + 1}"].Value.ToString());
+              decimal custo = Convert.ToDecimal(dgvOrcamento.Rows[linhas].Cells[$"custo{i + 1}"].Value.ToString());
+              if (receita != 0 && custo != 0)
+              {
+                var lucro = (receita - custo) / receita * 100;
+
+                dgvOrcamento.Rows[linhas].Cells[$"lucro{lista[i]}"].Value = Math.Round(lucro, 2) + "%".ToString();
+              }
+            }
+          }
+        }
+        if (dgvOrcamento.Columns["lucroJan"].Visible == false)
+        {
+          dgvOrcamento.Columns["lucroJan"].Visible = true;
+          dgvOrcamento.Columns["lucroFev"].Visible = true;
+          dgvOrcamento.Columns["lucroMar"].Visible = true;
+          dgvOrcamento.Columns["lucroAbr"].Visible = true;
+          dgvOrcamento.Columns["lucroMai"].Visible = true;
+          dgvOrcamento.Columns["lucroJun"].Visible = true;
+          dgvOrcamento.Columns["lucroJul"].Visible = true;
+          dgvOrcamento.Columns["lucroAgo"].Visible = true;
+          dgvOrcamento.Columns["lucroSet"].Visible = true;
+          dgvOrcamento.Columns["lucroOut"].Visible = true;
+          dgvOrcamento.Columns["lucroNov"].Visible = true;
+          dgvOrcamento.Columns["lucroDez"].Visible = true;
+        }
+        else
+        {
+          dgvOrcamento.Columns["lucroJan"].Visible = false;
+          dgvOrcamento.Columns["lucroFev"].Visible = false;
+          dgvOrcamento.Columns["lucroMar"].Visible = false;
+          dgvOrcamento.Columns["lucroAbr"].Visible = false;
+          dgvOrcamento.Columns["lucroMai"].Visible = false;
+          dgvOrcamento.Columns["lucroJun"].Visible = false;
+          dgvOrcamento.Columns["lucroJul"].Visible = false;
+          dgvOrcamento.Columns["lucroAgo"].Visible = false;
+          dgvOrcamento.Columns["lucroSet"].Visible = false;
+          dgvOrcamento.Columns["lucroOut"].Visible = false;
+          dgvOrcamento.Columns["lucroNov"].Visible = false;
+          dgvOrcamento.Columns["lucroDez"].Visible = false;
+        }
+        Lucros = 1;
+      }
     }
   }
 }
