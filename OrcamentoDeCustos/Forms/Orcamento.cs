@@ -309,35 +309,33 @@ namespace OrcamentoDeCustos
     {
       if (checkCusto.Checked)
       {
-        dgvOrcamento.Columns["janCusto"].Visible = false;
-        dgvOrcamento.Columns["fevCusto"].Visible = false;
-        dgvOrcamento.Columns["abrilCusto"].Visible = false;
-        dgvOrcamento.Columns["marCusto"].Visible = false;
-        dgvOrcamento.Columns["abrilCusto"].Visible = false;
-        dgvOrcamento.Columns["maioCusto"].Visible = false;
-        dgvOrcamento.Columns["junCusto"].Visible = false;
-        dgvOrcamento.Columns["julCusto"].Visible = false;
-        dgvOrcamento.Columns["agoCusto"].Visible = false;
-        dgvOrcamento.Columns["setCusto"].Visible = false;
-        dgvOrcamento.Columns["outCusto"].Visible = false;
-        dgvOrcamento.Columns["novCusto"].Visible = false;
-        dgvOrcamento.Columns["dezCusto"].Visible = false;
+        dgvOrcamento.Columns["custo1"].Visible = false;
+        dgvOrcamento.Columns["custo2"].Visible = false;
+        dgvOrcamento.Columns["custo3"].Visible = false;
+        dgvOrcamento.Columns["custo4"].Visible = false;
+        dgvOrcamento.Columns["custo5"].Visible = false;
+        dgvOrcamento.Columns["custo6"].Visible = false;
+        dgvOrcamento.Columns["custo7"].Visible = false;
+        dgvOrcamento.Columns["custo8"].Visible = false;
+        dgvOrcamento.Columns["custo9"].Visible = false;
+        dgvOrcamento.Columns["custo10"].Visible = false;
+        dgvOrcamento.Columns["custo11"].Visible = false;
+        dgvOrcamento.Columns["custo12"].Visible = false;
       }
       else
       {
-        dgvOrcamento.Columns["janCusto"].Visible = true;
-        dgvOrcamento.Columns["fevCusto"].Visible = true;
-        dgvOrcamento.Columns["abrilCusto"].Visible = true;
-        dgvOrcamento.Columns["marCusto"].Visible = true;
-        dgvOrcamento.Columns["abrilCusto"].Visible = true;
-        dgvOrcamento.Columns["maioCusto"].Visible = true;
-        dgvOrcamento.Columns["junCusto"].Visible = true;
-        dgvOrcamento.Columns["julCusto"].Visible = true;
-        dgvOrcamento.Columns["agoCusto"].Visible = true;
-        dgvOrcamento.Columns["setCusto"].Visible = true;
-        dgvOrcamento.Columns["outCusto"].Visible = true;
-        dgvOrcamento.Columns["novCusto"].Visible = true;
-        dgvOrcamento.Columns["dezCusto"].Visible = true;
+        dgvOrcamento.Columns["custo1"].Visible = true;
+        dgvOrcamento.Columns["custo2"].Visible = true;
+        dgvOrcamento.Columns["custo3"].Visible = true;
+        dgvOrcamento.Columns["custo4"].Visible = true;
+        dgvOrcamento.Columns["custo5"].Visible = true;
+        dgvOrcamento.Columns["custo6"].Visible = true;
+        dgvOrcamento.Columns["custo7"].Visible = true;
+        dgvOrcamento.Columns["custo8"].Visible = true;
+        dgvOrcamento.Columns["custo9"].Visible = true;
+        dgvOrcamento.Columns["custo10"].Visible = true;
+        dgvOrcamento.Columns["custo11"].Visible = true;
+        dgvOrcamento.Columns["custo12"].Visible = true;
       }
     }
 
@@ -357,35 +355,33 @@ namespace OrcamentoDeCustos
     {
       if (checkVenda.Checked)
       {
-        dgvOrcamento.Columns["janeiro"].Visible = false;
-        dgvOrcamento.Columns["fevereiro"].Visible = false;
-        dgvOrcamento.Columns["abril"].Visible = false;
-        dgvOrcamento.Columns["marco"].Visible = false;
-        dgvOrcamento.Columns["abril"].Visible = false;
-        dgvOrcamento.Columns["maio"].Visible = false;
-        dgvOrcamento.Columns["junho"].Visible = false;
-        dgvOrcamento.Columns["julho"].Visible = false;
-        dgvOrcamento.Columns["agosto"].Visible = false;
-        dgvOrcamento.Columns["setembro"].Visible = false;
-        dgvOrcamento.Columns["outubro"].Visible = false;
-        dgvOrcamento.Columns["novembro"].Visible = false;
-        dgvOrcamento.Columns["Dezembro"].Visible = false;
+        dgvOrcamento.Columns["venda1"].Visible = false;
+        dgvOrcamento.Columns["venda2"].Visible = false;
+        dgvOrcamento.Columns["venda3"].Visible = false;
+        dgvOrcamento.Columns["venda4"].Visible = false;
+        dgvOrcamento.Columns["venda5"].Visible = false;
+        dgvOrcamento.Columns["venda6"].Visible = false;
+        dgvOrcamento.Columns["venda7"].Visible = false;
+        dgvOrcamento.Columns["venda8"].Visible = false;
+        dgvOrcamento.Columns["venda9"].Visible = false;
+        dgvOrcamento.Columns["venda10"].Visible = false;
+        dgvOrcamento.Columns["venda11"].Visible = false;
+        dgvOrcamento.Columns["venda12"].Visible = false;
       }
       else
       {
-        dgvOrcamento.Columns["janeiro"].Visible = true;
-        dgvOrcamento.Columns["fevereiro"].Visible = true;
-        dgvOrcamento.Columns["abril"].Visible = true;
-        dgvOrcamento.Columns["marco"].Visible = true;
-        dgvOrcamento.Columns["abril"].Visible = true;
-        dgvOrcamento.Columns["maio"].Visible = true;
-        dgvOrcamento.Columns["junho"].Visible = true;
-        dgvOrcamento.Columns["julho"].Visible = true;
-        dgvOrcamento.Columns["agosto"].Visible = true;
-        dgvOrcamento.Columns["setembro"].Visible = true;
-        dgvOrcamento.Columns["outubro"].Visible = true;
-        dgvOrcamento.Columns["novembro"].Visible = true;
-        dgvOrcamento.Columns["Dezembro"].Visible = true;
+        dgvOrcamento.Columns["venda1"].Visible = true;
+        dgvOrcamento.Columns["venda2"].Visible = true;
+        dgvOrcamento.Columns["venda3"].Visible = true;
+        dgvOrcamento.Columns["venda4"].Visible = true;
+        dgvOrcamento.Columns["venda5"].Visible = true;
+        dgvOrcamento.Columns["venda6"].Visible = true;
+        dgvOrcamento.Columns["venda7"].Visible = true;
+        dgvOrcamento.Columns["venda8"].Visible = true;
+        dgvOrcamento.Columns["venda9"].Visible = true;
+        dgvOrcamento.Columns["venda10"].Visible = true;
+        dgvOrcamento.Columns["venda11"].Visible = true;
+        dgvOrcamento.Columns["venda12"].Visible = true;
       }
     }
 
